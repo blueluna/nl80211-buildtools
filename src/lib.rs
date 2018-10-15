@@ -190,7 +190,7 @@ impl Specification {
     pub fn generate(&self, filepath: &str) -> io::Result<()> {
         let out_file = std::fs::File::create(filepath)?;
         writeln!(&out_file, "use std::convert::{{From, Into}};")?;
-        writeln!(&out_file, "use netlink::ConvertFrom;")?;
+        writeln!(&out_file, "use netlink_rs::ConvertFrom;")?;
         writeln!(&out_file, "")?;
 
         for (name, item) in &self.enumerations {
